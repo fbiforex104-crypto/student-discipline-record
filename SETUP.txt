@@ -1,0 +1,119 @@
+═══════════════════════════════════════════════════════════════════════════════
+📋 DISCIPLINE PULSE - Excel Integration Edition
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ WHAT'S NEW:
+
+1️⃣  Excel Upload Button
+   • New "Import Panel" on the left sidebar
+   • Upload .xlsx or .xls files
+   • Shows count of imported students
+
+2️⃣  Autofill System
+   • Type student ID (5 digits)
+   • Student name fills automatically
+   • Based on Excel database
+
+3️⃣  Browser Storage
+   • Student data saved in localStorage
+   • Persists between sessions
+   • Upload new Excel to update
+
+4️⃣  XLSX Library
+   • Added: https://cdnjs.cloudflare.com/ajax/libs/xlsx/
+   • Reads Excel files directly in browser
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 HOW TO USE:
+
+1. Open Discipline Pulse website
+2. Left panel: Click "📤 เลือกไฟล์ Excel"
+3. Select "รายชื่อนักเรียน_มัธยมศึกษาตอนปลาย.xlsx"
+4. Wait for "✅ นำเข้าสำเร็จ (18 นักเรียน)"
+5. Type student ID → Name auto-fills
+6. Select rule violation → Submit
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 FILES MODIFIED:
+
+📄 index.html
+   • Added <div class="import-panel"> with file input
+   • Changed name input to <datalist>
+   • Added studentNameList datalist
+   • Added XLSX library script
+
+📄 script.js
+   • Added STUDENTS_KEY constant
+   • Added loadStudents() function
+   • Added updateStudentNameList() function
+   • Added handleExcelUpload() function
+   • Added studentIdInput blur event → autofill
+   • Added excelFile change event → upload handler
+
+📄 styles.css
+   • Added import panel styles
+   • Added file button & input styles
+   • Added import status success/error states
+   • Updated responsive layout
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📦 INCLUDED FILES:
+
+✅ index.html - Updated with Excel upload UI
+✅ script.js - Updated with autofill logic
+✅ styles.css - Updated with import styles
+✅ รายชื่อนักเรียน_มัธยมศึกษาตอนปลาย.xlsx - Sample data (18 students)
+✅ README_TH.txt - Thai documentation
+✅ SETUP.txt - This file (English documentation)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 FEATURES:
+
+✓ Student ID validation (5 digits)
+✓ Automatic name population from Excel
+✓ Success/error notifications
+✓ Persistent storage in localStorage
+✓ Responsive design (desktop & mobile)
+✓ Dark theme with accent colors
+✓ Toast notifications
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎨 UI ENHANCEMENTS:
+
+• Import Panel: Teal accent color (#52e6c6)
+• Success Message: Green background
+• Error Message: Coral red background
+• File Button: Dashed border, hover effect
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚙️ TECHNICAL DETAILS:
+
+Storage Keys:
+  • discipline-pulse-records (violations)
+  • discipline-pulse-students (from Excel)
+  • discipline-pulse-recorder (staff name)
+
+Excel Structure Expected:
+  Column 0: ลำดับ (order)
+  Column 1: เลขประจำตัว (student ID)
+  Column 2: (empty)
+  Column 3: คำนำหน้า (prefix: นาย/นาง/นางสาว)
+  Column 4: ชื่อ (first name)
+  Column 5: สกุล (last name)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 READY TO USE!
+
+Just open index.html in your browser and:
+1. Upload the Excel file
+2. Start recording student violations
+3. Names will auto-fill based on student ID
+
+ขอบคุณค่ะ! 🎉
